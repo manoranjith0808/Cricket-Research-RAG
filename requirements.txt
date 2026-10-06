@@ -1,0 +1,39 @@
+# Core LangChain stack -- pinned to the stable 0.3.x line.
+# (LangChain 1.x restructured around agentic workflows and moved/renamed
+#  several retriever classes used here (EnsembleRetriever, BM25Retriever). Pin these
+#  versions so the notebook keeps working; upgrading is fine later but will need
+#  small import updates.)
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-core==0.3.86
+langchain-text-splitters==0.3.11
+
+# Embedding model integrations
+langchain-huggingface==0.1.2      # for BAAI/bge-m3 (open-source, local)
+langchain-google-genai            # for Google Gemini LLM (3.1-flash-lite, 3.1-flash, 3.1-pro) and Embeddings
+google-genai
+sentence-transformers==5.6.1      # backend used by langchain-huggingface
+
+# Vector database
+langchain-chroma==0.2.6
+chromadb==1.5.9
+
+# Retrieval
+rank-bm25==0.2.2                  # BM25 keyword retriever, used in hybrid search
+
+# PDF handling
+pypdf==5.9.0                      # used by PyPDFLoader
+pdfplumber==0.11.9                # alternative loader, better for tables/layout
+reportlab==4.4.10                 # only needed to (re)generate the sample papers
+
+# App / UI
+streamlit==1.60.0
+
+# Utilities
+python-dotenv==1.2.2
+tiktoken==0.13.0
+numpy>=2.1.0,<3.0.0
+
+# Optional: automated RAG evaluation (Step 7 stretch)
+# ragas
+# deepeval
